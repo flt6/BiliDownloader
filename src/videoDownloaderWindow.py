@@ -52,7 +52,7 @@ class ErrorGetVidioUrl(Exception):
 
 
 def removeSpecialCharacter(original: str) -> str:
-    spe = '~!@#$%^&*()+-*/<>,.[]\\|\"\' '
+    spe = ':~!@#$%^&*()+-*/<>,.[]\\|\"\' '
     ret = original[:]
     for c in spe:
         if c in ret:
