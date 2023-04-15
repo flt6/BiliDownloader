@@ -53,13 +53,9 @@ class ErrorGetVidioUrl(Exception):
 
 def removeSpecialCharacter(original: str) -> str:
     spe = ':~!@#$%^&*()+-*/<>,.[]\\|\"\' '
-    ret = original[:]
-    for c in spe:
-        if c in ret:
-            count = ret.count(c)
-            for i in range(count):
-                index = ret.index(c)
-                ret = ret[:index] + '_' + ret[index + 1:]
+    ret = original
+    for ch in spe:
+        ret = ret.replace(ch, "_")
     return ret
 
 
